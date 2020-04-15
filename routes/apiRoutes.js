@@ -13,7 +13,7 @@ module.exports = app => {
             $(".l-grid--item").each((i, element) => {
                 results.title = $(element).children().find("h2").text();
                 results.link = $(element).children().find("a").attr("href");
-                results.imageLink = $(element).children().find("a").find("img").attr("src");
+                results.image = $(element).children().find("a").find("img").attr("src");
             
                 db.Article.create(results).then(dbArticle => {
                     console.log(dbArticle);
@@ -36,17 +36,9 @@ module.exports = app => {
         })
     });
 
-    // app.get("/api/delete", (req, res) => {
-        
-    // });
+    // app.post("/api/postnote/:id", (req, res) => {
 
-    // app.get("api/all", (req, res) => {
-
+    //     var note = req.body.body;
+    //     var
     // })
-
-    // app.get("/api/savedarticle/:id", (req, res) => {
-
-    // })
-
-    // app.get("/api/postarticle")
 }
