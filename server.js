@@ -16,7 +16,7 @@ let MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/Mongo-News";
 
 mongoose.connect(MONGODB_URI);
 
-mongoose.set("useFindandModify", false);
+mongoose.set("useFindAndModify", false);
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
