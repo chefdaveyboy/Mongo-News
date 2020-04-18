@@ -3,7 +3,8 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 
 module.exports = app => {
-    app.get("/api/scrape", (req, res) => {
+    function scraper() {
+        app.get("/api/scrape", (req, res) => {
         axios.get("https://www.si.com/wrestling")
         .then(response => {
             const $ = cheerio.load(response.data);
@@ -27,7 +28,7 @@ module.exports = app => {
         });
         
         
-    });
+    })};
 
     app.get("/scrapedArticles", (req, res) => {
         db.Article.find({}).then( data => {
